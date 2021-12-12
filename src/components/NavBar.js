@@ -4,6 +4,7 @@ import { Button, Menu, AppBar, Box, Toolbar, IconButton, Typography, InputBase, 
 import { HelpOutline, More, Search, AccountCircleOutlined, ShoppingCartOutlined, BookmarkBorderOutlined, CreditCardOutlined, ExitToAppOutlined, LocalShippingOutlined, CancelOutlined, ChatOutlined } from '@mui/icons-material';
 
 import MenuComponent from './MenuComponent';
+import { images } from '../assets';
 
 const SearchDiv = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -154,7 +155,7 @@ export default function NavBar() {
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                        <strong>JUMIA</strong>
+                        <img src={images.logo} alt="logo" />
                     </Typography>
                     <SearchDiv >
                         <SearchIconWrapper>
