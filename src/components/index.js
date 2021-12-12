@@ -1,3 +1,3 @@
-import PrimarySearchAppBar from './PrimarySearchAppBar';
+import NavBar from './NavBar';
 
-export { PrimarySearchAppBar };
+export { NavBar };

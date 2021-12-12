@@ -1,25 +1,15 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
+import { Button, Menu, AppBar, Box, Toolbar, IconButton, Typography, InputBase, Badge, MenuItem } from '@mui/material';
+import { HelpOutline, More, Search, AccountCircleOutlined, ShoppingCartOutlined, BookmarkBorderOutlined, CreditCardOutlined, ExitToAppOutlined, LocalShippingOutlined, CancelOutlined, ChatOutlined } from '@mui/icons-material';
 
-const Search = styled('div')(({ theme }) => ({
+import MenuComponent from './MenuComponent';
+
+const SearchDiv = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    border: `1px solid ${alpha(theme.palette.grey[300], 0.35)}`,
+    // backgroundColor: alpha(theme.palette.common.white, 0.15),
     '&:hover': {
         backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
@@ -51,12 +41,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('md')]: {
-            width: '20ch',
+            width: '100ch',
         },
     },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function NavBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -122,7 +112,7 @@ export default function PrimarySearchAppBar() {
             <MenuItem>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={4} color="error">
-                        <MailIcon />
+                        <HelpOutline />
                     </Badge>
                 </IconButton>
                 <p>Messages</p>
@@ -134,10 +124,10 @@ export default function PrimarySearchAppBar() {
                     color="inherit"
                 >
                     <Badge badgeContent={17} color="error">
-                        <NotificationsIcon />
+                        <ShoppingCartOutlined />
                     </Badge>
                 </IconButton>
-                <p>Notifications</p>
+                <p>ShoppingCartOutlined</p>
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
@@ -147,7 +137,7 @@ export default function PrimarySearchAppBar() {
                     aria-haspopup="true"
                     color="inherit"
                 >
-                    <AccountCircle />
+                    <AccountCircleOutlined />
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
@@ -157,59 +147,94 @@ export default function PrimarySearchAppBar() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
+                <Toolbar sx={{ p: 1 }} >
                     <Typography
-                        variant="h6"
+                        variant="h5"
                         noWrap
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                        MUI
+                        <strong>JUMIA</strong>
                     </Typography>
-                    <Search>
+                    <SearchDiv >
                         <SearchIconWrapper>
-                            <SearchIcon />
+                            <Search />
                         </SearchIconWrapper>
                         <StyledInputBase
-                            placeholder="Search…"
+                            variant="outlined"
+                            fullWidth
+                            placeholder="Search products, brands and categories"
                             inputProps={{ 'aria-label': 'search' }}
                         />
-                    </Search>
+                    </SearchDiv>
+                    <Button
+                        variant="contained"
+                    >SEARCH</Button>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="error">
-                                <MailIcon />
-                            </Badge>
+                        <IconButton disableRipple disableFocusRipple>
+                            <MenuComponent
+                                buttonTitle="HI, BRIAN"
+                                buttonIcon={AccountCircleOutlined}
+                                MenuItems={[
+                                    {
+                                        title: "My Account",
+                                        icon: <AccountCircleOutlined />,
+                                    },
+                                    {
+                                        title: "My Orders",
+                                        icon: <ShoppingCartOutlined />,
+                                    },
+                                    {
+                                        title: "Saved Items",
+                                        icon: < BookmarkBorderOutlined />,
+                                    },
+                                    {
+                                        title: "Jumia Credit",
+                                        icon: <CreditCardOutlined />
+                                    },
+                                    {
+                                        title: "LOGOUT",
+                                        icon: <ExitToAppOutlined />,
+                                    }
+                                ]}
+                            />
                         </IconButton>
-                        <IconButton
-                            size="large"
-                            aria-label="show 17 new notifications"
-                            color="inherit"
-                        >
-                            <Badge badgeContent={17} color="error">
-                                <NotificationsIcon />
-                            </Badge>
+                        <IconButton disableFocusRipple disableRipple>
+                            <MenuComponent
+                                buttonTitle="Help"
+                                buttonIcon={HelpOutline}
+                                MenuItems={[
+                                    {
+                                        title: "Help Center",
+                                        icon: <HelpOutline />,
+                                    },
+                                    {
+                                        title: "Place and Track Order",
+                                        icon: <LocalShippingOutlined />,
+                                    },
+                                    {
+                                        title: "Order Cancellation",
+                                        icon: <CancelOutlined />,
+                                    },
+                                    {
+                                        title: "Returns & Refunds",
+                                        icon: <LocalShippingOutlined />,
+                                    },
+                                    {
+                                        title: "Payment and Jumia Account",
+                                        icon: <CreditCardOutlined />,
+                                    },
+                                    {
+                                        title: "Live Help",
+                                        icon: <ChatOutlined />,
+                                    },
+                                ]}
+                            />
                         </IconButton>
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
+                        <IconButton disableRipple disableFocusRipple color='inherit'>
+                            <ShoppingCartOutlined />
+                            <Typography variant="h6" noWrap>Cart</Typography>
                         </IconButton>
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -221,7 +246,7 @@ export default function PrimarySearchAppBar() {
                             onClick={handleMobileMenuOpen}
                             color="inherit"
                         >
-                            <MoreIcon />
+                            <More />
                         </IconButton>
                     </Box>
                 </Toolbar>
