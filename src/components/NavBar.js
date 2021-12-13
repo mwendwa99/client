@@ -170,7 +170,12 @@ export default function NavBar() {
                     </SearchDiv>
                     <Button
                         variant="contained"
-                    >SEARCH</Button>
+                        color="secondary"
+                    >
+                        <Typography variant="body1" >
+                            <strong>SEARCH</strong>
+                        </Typography>
+                    </Button>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton disableRipple disableFocusRipple>

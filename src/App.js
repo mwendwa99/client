@@ -1,12 +1,14 @@
+import React, { Fragment } from 'react';
+
 import { NavBar } from './components';
-import { ThemeProvider } from '@mui/material/styles';
-import { theme } from './theme/theme';
+import { Home } from './pages';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <Fragment>
       <NavBar />
-    </ThemeProvider>
+      <Home />
+    </Fragment>
   );
 }
 
