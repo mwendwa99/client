@@ -3,3 +3,10 @@
 *::before {
   box-sizing: border-box;
 }
+.App {
+  background-image: url("https://ke.jumia.is/cms/2021/W49/NCBA/KE_Cross_KrisiNaJumia_Generic_1221_S.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}

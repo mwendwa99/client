@@ -8,11 +8,13 @@ import {
 } from '@mui/icons-material';
 
 import { List } from '../components';
+import { images } from '../assets';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        backgroundColor: 'yellow',
+        // backgroundColor: 'yellow',
         height: '100%',
+        paddingTop: 0,
     },
 }));
 
@@ -20,9 +22,9 @@ const Home = () => {
     const classes = useStyles();
 
     return (
-        <Container maxWidth='xl' className={classes.root}>
+        <Container maxWidth='xl' disableGutters className={classes.root}>
             <Box my={6}>
-                <Grid container spacing={3}>
+                <Grid container spacing={2}>
                     <Grid item xs={3}>
                         <List
                             listItems={[
@@ -78,13 +80,11 @@ const Home = () => {
                         />
                     </Grid>
                     <Grid item xs={6}>
-                        <Paper>
-                            <Typography variant='h4'>
-                                Hello
-                            </Typography>
+                        <Paper style={{ height: '100%' }}>
+                            <img src={images.image1} height="100%" width="100%" alt="" />
                         </Paper>
                     </Grid>
-                    <Grid container item xs={3} spacing={3}>
+                    <Grid container item xs={3} spacing={2}>
                         <Grid item xs={12}>
                             <Paper>
                                 <Typography variant='h4'>

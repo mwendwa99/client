@@ -149,6 +149,7 @@ export default function NavBar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar sx={{ p: 1 }} >
+                    <Box sx={{ flexGrow: 1 }} />
                     <Typography
                         variant="h5"
                         noWrap
@@ -255,6 +256,7 @@ export default function NavBar() {
                             <More />
                         </IconButton>
                     </Box>
+                    <Box sx={{ flexGrow: 1 }} />
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
