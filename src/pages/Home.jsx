@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
-import { Container, Typography, Grid, Box, Paper } from '@mui/material';
+import { Container, Typography, Grid, Box, Paper, CardContent } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import {
     FoodBankOutlined, SpaOutlined, CoffeeMakerOutlined, PhoneAndroidOutlined, LaptopWindowsOutlined,
     LiveTvOutlined, CheckroomOutlined, SportsEsportsOutlined, ChildCareOutlined, FitnessCenterOutlined,
-    GrassOutlined, CategoryOutlined
+    GrassOutlined, CategoryOutlined, HelpOutlined, Inventory2Outlined, CurrencyExchangeOutlined,
 } from '@mui/icons-material';
 
-import { List } from '../components';
+import { ListComponent, CardComponent } from '../components';
 import { images } from '../assets';
 
 const useStyles = makeStyles(theme => ({
@@ -26,7 +26,7 @@ const Home = () => {
             <Box my={6}>
                 <Grid container spacing={2}>
                     <Grid item xs={3}>
-                        <List
+                        <ListComponent
                             listItems={[
                                 {
                                     title: 'Supermarket',
@@ -79,25 +79,37 @@ const Home = () => {
                             ]}
                         />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={7}>
                         <Paper style={{ height: '100%' }}>
-                            <img src={images.image1} height="100%" width="100%" alt="" />
+                            <img src={images.carousel1} height="100%" width="100%" alt="" />
                         </Paper>
                     </Grid>
-                    <Grid container item xs={3} spacing={2}>
+                    <Grid container item xs={2} spacing={3}>
                         <Grid item xs={12}>
-                            <Paper>
-                                <Typography variant='h4'>
-                                    Hello
-                                </Typography>
-                            </Paper>
+                            <CardComponent
+                                cardItems={[
+                                    {
+                                        title: 'Help Center',
+                                        subtitle: 'Guide To Customer Care',
+                                        icon: <HelpOutlined />,
+                                    },
+                                    {
+                                        title: 'Easy Return',
+                                        subtitle: 'Quick Refund',
+                                        icon: <Inventory2Outlined />,
+                                    },
+                                    {
+                                        title: 'Sell on Jumia',
+                                        subtitle: 'Millions Of Visitors',
+                                        icon: <CurrencyExchangeOutlined />,
+                                    },
+                                ]}
+                            />
                         </Grid>
                         <Grid item xs={12}>
-                            <Paper>
-                                <Typography variant='h4'>
-                                    Hello
-                                </Typography>
-                            </Paper>
+                            <CardComponent
+                                gif={images.carousel2}
+                            />
                         </Grid>
                     </Grid>
                 </Grid>

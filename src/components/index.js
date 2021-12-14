@@ -1,5 +1,5 @@
 import NavBar from './NavBar';
-import Card from './CardComponent';
-import List from './ListComponent';
+import CardComponent from './CardComponent';
+import ListComponent from './ListComponent';
 
-export { NavBar, Card, List };
+export { NavBar, CardComponent, ListComponent };
