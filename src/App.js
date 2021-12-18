@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import "./App.css"
 import { NavBar } from './components';
-import { Home } from './pages';
+import { Home, Page2 } from './pages';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <div className='App'>
         <NavBar />
         <Home />
+        <Page2 />
       </div>
     </Fragment>
   );

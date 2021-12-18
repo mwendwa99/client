@@ -4,19 +4,30 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Icon, Paper } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
+const useStyles = makeStyles(theme => ({
+    root: (cardStyle) => ({
+        display: 'flex', alignItems: 'center',
+        textTransform: cardStyle.textTransform,
+    }),
+    cardIcon: {
+        marginRight: theme.spacing(2),
+    },
+}));
+export default function BasicCard({ cardItems, cardStyle, gif }) {
+    const classes = useStyles({ cardStyle });
 
-export default function BasicCard({ cardItems, gif }) {
     return !gif ? (
         <Card sx={{ minWidth: 275 }}>
             {cardItems.map((item, index) => (
                 <CardActionArea key={index}>
-                    <CardContent style={{ display: 'flex' }}>
-                        <Icon fontSize='large' sx={{ mr: 2 }} >
+                    <CardContent className={classes.root}>
+                        <Icon fontSize='large' className={classes.cardIcon} >
                             {item.icon}
                         </Icon>
                         <Box>
-                            <Typography variant="button" component="h2">
+                            <Typography variant="body1" className={classes.cardText}>
                                 <strong>{item.title}</strong>
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">

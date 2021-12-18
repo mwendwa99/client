@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Container, Typography, Grid, Box, Paper, CardContent } from '@mui/material';
+import { Container, Grid, Box, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import {
     FoodBankOutlined, SpaOutlined, CoffeeMakerOutlined, PhoneAndroidOutlined, LaptopWindowsOutlined,
@@ -12,7 +12,6 @@ import { images } from '../assets';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        // backgroundColor: 'yellow',
         height: '100%',
         paddingTop: 0,
     },
