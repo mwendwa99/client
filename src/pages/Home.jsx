@@ -49,77 +49,81 @@ const Home = () => {
                             listItems={[
                                 {
                                     title: 'Supermarket',
-                                    icon: <FoodBankOutlined />,
+                                    icon: <FoodBankOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Health & Beauty',
-                                    icon: <SpaOutlined />,
+                                    icon: <SpaOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Home & Office',
-                                    icon: <CoffeeMakerOutlined />,
+                                    icon: <CoffeeMakerOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Phones & Tablets',
-                                    icon: <PhoneAndroidOutlined />,
+                                    icon: <PhoneAndroidOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Computing',
-                                    icon: <LaptopWindowsOutlined />,
+                                    icon: <LaptopWindowsOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Electronics',
-                                    icon: <LiveTvOutlined />,
+                                    icon: <LiveTvOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Fashion',
-                                    icon: <CheckroomOutlined />,
+                                    icon: <CheckroomOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Gaming',
-                                    icon: <SportsEsportsOutlined />,
+                                    icon: <SportsEsportsOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Baby Products',
-                                    icon: <ChildCareOutlined />,
+                                    icon: <ChildCareOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Sporting Goods',
-                                    icon: <FitnessCenterOutlined />,
+                                    icon: <FitnessCenterOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Garden & Outdoors',
-                                    icon: <GrassOutlined />,
+                                    icon: <GrassOutlined fontSize='small' />,
                                 },
                                 {
                                     title: 'Other categories',
-                                    icon: <CategoryOutlined />,
+                                    icon: <CategoryOutlined fontSize='small' />,
                                 },
                             ]}
                         />
                     </Grid>
                     <Grid item xs={7}>
-                        <Carousel
-                            swipeable={true}
-                            draggable={true}
-                            showDots={true}
-                            responsive={responsive}
-                            ssr={true} // means to render carousel on server-side.
-                            infinite={true}
-                            autoPlay={true}
-                            autoPlaySpeed={2000}
-                            keyBoardControl={true}
-                            customTransition="transform 500ms ease-in-out"
-                            transitionDuration={2000}
-                            containerClass="carousel-container"
-                            removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-                            dotListClass="custom-dot-list-style"
-                            itemClass="carousel-item-padding-40-px"
-                        >
-                            <img src={images.carousel1} height="100%" width="100%" alt="" />
-                            <img src={images.carousel3} height="100%" width="100%" alt="" />
-                            <img src={images.carousel4} height="100%" width="100%" alt="" />
-                        </Carousel>
+                        <Paper style={{ height: '100%', display: 'flex' }}>
+                            <Carousel
+                                style={{ height: '100%' }}
+                                className="carousel-container"
+                                swipeable={true}
+                                draggable={true}
+                                showDots={true}
+                                responsive={responsive}
+                                ssr={true} // means to render carousel on server-side.
+                                infinite={true}
+                                autoPlay={true}
+                                autoPlaySpeed={2000}
+                                keyBoardControl={true}
+                                customTransition="transform 500ms ease-in-out"
+                                transitionDuration={2000}
+                                containerClass="carousel-container"
+                                removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
+                                dotListClass="custom-dot-list-style"
+                            // itemClass="carousel-item-padding-10-px"
+                            >
+                                <img src={images.carousel1} height="100%" alt="" />
+                                <img src={images.carousel3} height="100%" alt="" />
+                                <img src={images.carousel4} height="100%" alt="" />
+                            </Carousel>
+                        </Paper>
                     </Grid>
                     <Grid container item xs={2} spacing={3}>
                         <Grid item xs={12}>
@@ -151,7 +155,7 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </Box>
-        </Container>
+        </Container >
     );
 }
 

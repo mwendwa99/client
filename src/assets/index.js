@@ -5,5 +5,6 @@ export const images = {
     carousel2: "https://ke.jumia.is/cms/2021/W33/Thur/Webp.net-resizeimage.gif",
     carousel3: "https://ke.jumia.is/cms/2021/W51/HP-AC/Sliders/KE_Grocery_ActiveCustomer_Baking_1221_S1.png",
     carousel4: 'https://ke.jumia.is/cms/2021/W51/HP-AC/Sliders/KE_Grocery_ActiveCustomer_Baking_1221_S.png',
+    carousel5: 'https://ke.jumia.is/cms/2021/W51/HP/Sliders/712-x-384_S.jpg',
 
 };

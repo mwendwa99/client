@@ -9,8 +9,11 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
+        height: '100%',
         backgroundColor: theme.palette.background.paper,
         borderRadius: '4px',
+        padding: '0px',
+        margin: '0px',
     },
 }));
 
@@ -23,11 +26,11 @@ export default function ListComponent({ listItems }) {
         <List className={classes.root}>
             <ListSubheader>{listItems.title}</ListSubheader>
             {listItems.map((item, index) => (
-                <ListItemButton key={index}>
+                <ListItemButton className={classes.listButton} key={index}>
                     <ListItemIcon>
                         {item.icon}
                     </ListItemIcon>
-                    <ListItemText primary={item.title} />
+                    <ListItemText disableTypography primary={item.title} />
                 </ListItemButton>
             ))}
         </List>
