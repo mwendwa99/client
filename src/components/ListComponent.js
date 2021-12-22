@@ -18,12 +18,6 @@ export default function ListComponent({ listItems }) {
     const [open, setOpen] = React.useState(true);
     const classes = useStyles();
 
-    console.log(listItems);
-
-    // const handleClick = () => {
-    //     setOpen(!open);
-    // };
-
     return (
         // map over listItems and return a list of ListItemButton components
         <List className={classes.root}>
