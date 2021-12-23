@@ -115,7 +115,7 @@ const Home = () => {
                                 customTransition="transform 500ms ease-in-out"
                                 transitionDuration={2000}
                                 containerClass="carousel-container"
-                                removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
+                                removeArrowOnDeviceType={["tablet", "mobile"]}
                                 dotListClass="custom-dot-list-style"
                             // itemClass="carousel-item-padding-10-px"
                             >
